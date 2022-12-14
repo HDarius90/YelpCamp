@@ -1,6 +1,8 @@
 h2 {
-    color: cadetblue;
-    background-color: bisque;
+    color: #5fcf5f;
+    /* hexadecimal color system */
+    background-color: rgb(103, 0, 103);
+    /*rgb coloring*/
 }
 
 button {
@@ -10,4 +12,9 @@ button {
 
 p {
     background: orange;
+}
+
+body {
+    background-color: #c5e;
+    /* 3 digit hex code */
 }
