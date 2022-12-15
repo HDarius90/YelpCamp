@@ -1,0 +1,16 @@
+/* Universal Selector */
+* {
+    color: pink;
+    background-color: cyan;
+}
+
+/* Element Selector */
+button {
+    font-size: 30px;
+}
+
+/* selector list */
+h1,
+h2 {
+    color: darkslateblue;
+}
