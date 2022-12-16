@@ -19,3 +19,15 @@ button {
 footer a {
     color: chocolate;
 }
+
+input + button {
+    background-color: pink;
+}
+
+h2 + button {
+    font-size: 10px;
+}
+
+footer > a {
+    color: aquamarine;
+}
