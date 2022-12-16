@@ -11,3 +11,11 @@ button {
     color: aquamarine;
     font-size: small;
 }
+
+.post a {
+    color: #219ebc;
+}
+
+footer a {
+    color: chocolate;
+}
