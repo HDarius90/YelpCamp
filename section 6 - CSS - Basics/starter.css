@@ -5,3 +5,9 @@ button {
 #signup {
     background-color:blue;
 }
+
+.tag {
+    background-color: #d62828;
+    color: aquamarine;
+    font-size: small;
+}
