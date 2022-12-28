@@ -40,3 +40,18 @@ a[href*="google"]{
     color: green;
 }
 
+.post button:hover {
+    background-color: #d62828;
+    color: aliceblue;
+}
+
+button:active {
+    background-color: #219ebc;
+}
+
+.post:nth-of-type(3n) {
+    background-color: #faedcd;
+}
+
+
+
