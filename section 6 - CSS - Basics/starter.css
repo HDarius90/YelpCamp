@@ -53,5 +53,29 @@ button:active {
     background-color: #faedcd;
 }
 
+h2::first-letter {
+    font-size: 50px;
+}
+
+p::first-line {
+    color: #2a9d8f;
+}
+
+
+span::selection {
+    background-color: #a3b18a;
+}
+
+.post::before {
+    content: "\2665";
+    background-color: #d62828;
+    font-size: large;
+}
+
+.post::after {
+    content: "\2665";
+    background-color: #d62828;
+    font-size: large;
+}
 
 
