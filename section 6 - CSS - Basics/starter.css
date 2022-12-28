@@ -85,5 +85,10 @@ h1,h2 {
 button:hover {
     background-color: olive;
     font-size: 10px;
-
 }
+
+h1{
+    color: #d62828 !important;
+}
+
+
