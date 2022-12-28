@@ -81,3 +81,9 @@ span::selection {
 h1,h2 {
     color: yellow;
 }
+
+button:hover {
+    background-color: olive;
+    font-size: 10px;
+
+}
