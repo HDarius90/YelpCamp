@@ -78,4 +78,6 @@ span::selection {
     font-size: large;
 }
 
-
+h1,h2 {
+    color: yellow;
+}
