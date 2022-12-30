@@ -1,9 +1,14 @@
+body {
+    margin: 0;
+}
+
 #div1 {
     background-color: #ffbe0b;
     border-style: solid;
     border-width: 5px;
     border-color: black;
     box-sizing: border-box;
+    margin: 10px;
 }
 
 #div2 {
@@ -13,6 +18,7 @@
     border-color: #588157;
     box-sizing: border-box;
     padding: 10px 20px 0 3px;
+    margin: 20px 30px
 
 }
 
@@ -29,5 +35,6 @@ div {
 }
 
 button {
+    margin-top: 20px;
     padding: 10px 20px;
 }
