@@ -1,0 +1,17 @@
+h1 {
+    font-size: 50px;
+    border: 1px solid black;
+    line-height: 200%;
+}
+
+section {
+    height: 600px;
+    width: 600px;
+    background-color: #e3d5ca;
+}
+
+div {
+    background-color: #d4a373;
+    width: 50%;
+    height: 50%;
+}
