@@ -16,25 +16,38 @@ div {
     height: 50%;
 }
 
-article {
+#ems{
     font-size: 30px;
 }
 
-article h1{
+#ems h1{
     font-size: 2em;
     margin: 1em;
     padding: 1em;
 }
 
-p{
+#ems p{
     font-size: 0.5em;
 }
 
-button {
+#ems button {
     color: white;
     background-color: #2a9d8f;
     border: none;
     border-radius: 0.8em;
-    font-size: 1em;
+    font-size: 1.2em;
     padding: 0 1em;
 }
+
+#ems ul{
+    font-size: 1.2em;
+}
+
+#rems ul {
+    font-size: 1.2rem;
+}
+
+html {
+    font-size: 20px;
+}
+
