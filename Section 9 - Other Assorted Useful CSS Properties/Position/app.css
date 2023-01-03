@@ -1,0 +1,49 @@
+#one {
+    background-color: #22223b;
+}
+
+#two {
+    background-color: #4a4e69;
+}
+
+#three {
+    background-color: #9a8c98;
+}
+
+div {
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    display: inline-block;
+    margin: 10px;
+}
+
+#static #two {
+    position: static;
+    top: 100px;
+}
+
+#relative #two {
+    position: relative;
+    top: 100px;
+}
+
+#absolute {
+    position: relative;
+}
+
+#absolute #two {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+#fixed #two {
+    position: fixed;
+    right: 50px;
+}
+
+#sticky #two {
+    position: -webkit-sticky;
+    right: 50px;
+}

@@ -1,0 +1,37 @@
+h1{
+    background-color: palegoldenrod;
+    border: 1px solid black;
+    display: inline;
+}
+
+.span {
+    background-color: paleturquoise;
+    border: 1px solid black;
+    display: block;
+}
+
+#span{
+    background-color: red;
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    padding: 30px;
+    margin: 30px;
+}
+
+span + h1{
+    display: block;
+    width: 300px;
+    padding: 50px;
+    margin: 100px;
+}
+
+div {
+    height: 200px;
+    width: 200px;
+    background-color: olivedrab;
+    border: 5px solid black;
+    margin: 50px;
+    /* display: inline;  this doesn't work*/
+    display: inline-block;
+}
