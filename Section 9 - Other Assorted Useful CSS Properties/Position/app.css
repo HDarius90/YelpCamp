@@ -43,7 +43,3 @@ div {
     right: 50px;
 }
 
-#sticky #two {
-    position: -webkit-sticky;
-    right: 50px;
-}
