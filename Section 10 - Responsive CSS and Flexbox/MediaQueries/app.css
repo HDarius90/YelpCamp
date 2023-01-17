@@ -6,15 +6,39 @@ h1 {
     font-size: 6em;
     text-align: center;
 }
+
 nav {
     font-size: 1.5em;
 }
 
-ul,li {
+ul,
+li {
     display: inline;
     margin: 0;
     padding: 0;
 }
 
+@media (min-width:100px) and (max-width:600px) {
+    h1 {
+        color: red;
+    }
+}
 
+@media (min-width:601px) and (max-width:1000px) {
+    h1 {
+        color: white;
+        background-color: black;
+    }
+}
 
+@media (min-width:1001px) {
+    h1 {
+        color: green;
+    }
+}
+
+@media (orientation: landscape) {
+    body {
+        background-color: magenta;
+    }
+}
