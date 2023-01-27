@@ -10,3 +10,16 @@ if (password.length <= 6) {
 } else {
     console.log("Password saved");
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
