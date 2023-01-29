@@ -12,3 +12,8 @@ restaurant.zipcode = '11206';
 let fullAddress = `${restaurant.address}, ${restaurant.city}, ${restaurant.state}, ${restaurant.zipcode}`;
 console.log(fullAddress);
 console.log(restaurant);
+
+
+
+
+
