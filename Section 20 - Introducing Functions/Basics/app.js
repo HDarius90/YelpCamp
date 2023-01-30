@@ -32,3 +32,12 @@ function isSnakeEyes(num1, num2){
 
 isSnakeEyes(1,1);
 
+// Write a simple function multiply which accepts two numerical arguments
+// and returns their product (multiply them together).
+function multiply (num1, num2){
+return num1*num2;
+}
+
+console.log(multiply(5,4));
+
+
