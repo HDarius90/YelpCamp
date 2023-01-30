@@ -1,7 +1,7 @@
 let deadlyAnimal = "Blue-Ringed Octopus";
  
 function handleAnimal() {
-    let deadlyAnimal = "Scorpionfish";
+    let deadlyAnimal = "Scorpionfish"; //<---closest scope is used
     console.log(deadlyAnimal);
 }
  
