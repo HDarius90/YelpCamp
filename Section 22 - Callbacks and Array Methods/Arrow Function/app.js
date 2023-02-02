@@ -29,3 +29,5 @@ let isEven2 = num => {               //implicit return
 let isEven3 = num => num % 2 === 0;           //one-liner implicit return
 console.log(add(1, 2));
 
+
+
