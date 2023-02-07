@@ -7,3 +7,5 @@ function allEvens (numbers){
 
 const example = [2,5,6,8];
     console.log(allEvens(example));
+
+    
