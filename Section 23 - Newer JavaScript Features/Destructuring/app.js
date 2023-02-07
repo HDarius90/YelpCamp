@@ -1,3 +1,5 @@
+//Destructuring arrays
+
 const scores = [87, 65, 43, 21, 12];
 const highScore = scores[0];
 const secoundhighScore = scores[1];
@@ -19,3 +21,16 @@ const user = {
 }
 
 const {born: birthYear, firstName: name, city: from = 'Budapest'} = user;
+
+
+
+
+
+
+
+
+//Destructuring params
+function fullName ({firstName, lastName}){
+    console.log(`Hi ${firstName} ${lastName}`);
+}
+
