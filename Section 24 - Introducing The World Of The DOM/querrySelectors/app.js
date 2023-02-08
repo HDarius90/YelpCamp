@@ -6,3 +6,7 @@ Select the one checkbox and save it in a variable called checkbox. Be careful, t
 
 const doneTodos = document.querySelectorAll('.done');
 const checkbox = document.querySelector('input[type="checkbox"]');
+
+
+doneTodos[0].innerText = 'Play';
+doneTodos[1].innerHTML = '<b><i>Play</i></b>';
