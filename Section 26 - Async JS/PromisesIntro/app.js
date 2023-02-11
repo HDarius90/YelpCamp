@@ -49,7 +49,7 @@ const fakeRequestPromise = (url) => {
         console.log("ERROR!!!", err)
     })
  */
-
+/* 
 
     fakeRequestPromise('books.com/page1')
         .then(()=> {
@@ -72,8 +72,24 @@ const fakeRequestPromise = (url) => {
         .catch(()=>{
             console.log('IT DIDNT WORKED (page1)');
         })
+ */
 
 
+        fakeRequestPromise('yelp.com/api/coffee/page1')
+        .then((data)=>{
+            console.log(data);
+            return fakeRequestPromise('yelp.com/api/coffee/page2')
+        })
+        .then((data)=>{
+            console.log(data);
+            return fakeRequestPromise('yelp.com/api/coffee/page3')
+        })
+        .then((data) => {
+            console.log(data);
+        })
+        .catch((data)=>{
+            console.log(data);
+        })
 
 
 
