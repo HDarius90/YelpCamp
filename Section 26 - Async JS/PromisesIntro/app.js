@@ -87,8 +87,8 @@ const fakeRequestPromise = (url) => {
         .then((data) => {
             console.log(data);
         })
-        .catch((data)=>{
-            console.log(data);
+        .catch((err)=>{
+            console.log(err);
         })
 
 
