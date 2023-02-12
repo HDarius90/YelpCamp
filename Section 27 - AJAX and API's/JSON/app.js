@@ -1,14 +1,32 @@
-const data = '{"type":"general","setup":"What do you call an alligator in a vest?","punchline":"An in-vest-igator!","id":220}';
-const parsedData = JSON.parse(data);
+const req = new XMLHttpRequest();
+req.onload = function () {
+    console.log("IT LOADED!!!");
+    console.log(this.responseText);
+    let data = this.responseText;
+    displayJoke(data);
+}
+req.onerror = function () {
+    console.log('error');
+    console.log(this);
+}
 
-const h2 = document.querySelector('h2');
-const h3 = document.querySelector('h3');
-const paragraph = document.querySelector('p');
-const footer = document.querySelector('footer');
+req.open("GET", "https://official-joke-api.appspot.com/random_joke");
+req.send();
 
-h2.innerText = parsedData.type;
-h3.innerText = parsedData.punchline;
-paragraph.innerText = parsedData.setup;
-footer.innerText = parsedData.id;
 
-console.log(parsedData);
+function displayJoke(data) {
+
+    const parsedData = JSON.parse(data);
+
+    const h6 = document.querySelector('h6');
+    const h3 = document.querySelector('h3');
+    const paragraph = document.querySelector('p');
+    const footer = document.querySelector('footer');
+
+    h6.innerText = parsedData.type;
+    h3.innerText = parsedData.punchline;
+    paragraph.innerText = parsedData.setup;
+    footer.innerText = `id:#${parsedData.id}`;
+}
+
+
