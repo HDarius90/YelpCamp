@@ -11,12 +11,12 @@ req.onerror = function () {
 }
 
 req.open("GET", "https://official-joke-api.appspot.com/random_joke");
-req.send(); */
+req.send();
+ */
 
 
 
-
-fetch('https://official-joke-api.appspot.com/random_joke')
+/* fetch('https://official-joke-api.appspot.com/random_joke')
 .then((res) => {
     console.log("RESOLVED!", res);
     return res.json();
@@ -26,7 +26,18 @@ fetch('https://official-joke-api.appspot.com/random_joke')
 })
 .catch((e)=>{
     console.log('error', e);
-})
+}) */
+
+ const loadJoke = async () => {
+    const res = await fetch('https://official-joke-api.appspot.com/random_joke');
+    const data = await res.json();
+    displayJoke(data);
+    setInterval(async ()=>{
+        const res2 = await fetch('https://official-joke-api.appspot.com/random_joke');
+        const data2 = await res2.json();
+        displayJoke(data2);
+    },5000)
+}
 
 
 
@@ -46,3 +57,4 @@ function displayJoke(data) {
 }
 
 
+loadJoke();
