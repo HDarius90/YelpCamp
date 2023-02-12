@@ -29,14 +29,17 @@ req.send();
 }) */
 
  const loadJoke = async () => {
-    const res = await fetch('https://official-joke-api.appspot.com/random_joke');
-    const data = await res.json();
-    displayJoke(data);
-    setInterval(async ()=>{
-        const res2 = await fetch('https://official-joke-api.appspot.com/random_joke');
-        const data2 = await res2.json();
-        displayJoke(data2);
-    },5000)
+    try {
+        const res = await axios.get('https://official-joke-api.appspot.com/random_joke');
+        displayJoke(res.data);
+        setInterval(async ()=>{
+            const res2 = await axios.get('https://official-joke-api.appspot.com/random_joke');
+            displayJoke(res2.data);
+        },7000)
+    } catch (error) {
+        console.log('error', error);
+    }
+
 }
 
 
