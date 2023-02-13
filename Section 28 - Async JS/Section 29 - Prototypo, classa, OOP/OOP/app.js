@@ -54,6 +54,7 @@ class Color {
     }
     rgbToHsl(){
         let {r,g,b} = this;
+
         r /= 255, g /= 255, b /= 255;
         var max = Math.max(r, g, b), min = Math.min(r, g, b);
         var h, s, l = (max + min) / 2;
@@ -78,4 +79,49 @@ class Color {
 }
 
 const c1 = new Color(255, 67, 89, 'tomato');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Pet {
+	constructor(name, age) {
+		console.log('IN PET CONSTRUCTOR!');
+		this.name = name;
+		this.age = age;
+	}
+	eat() {
+		return `${this.name} is eating!`;
+	}
+}
+
+class Cat extends Pet {
+	constructor(name, age, livesLeft = 9) {
+		console.log('IN CAT CONSTRUCTOR!');
+		super(name, age);
+		this.livesLeft = livesLeft;
+	}
+	meow() {
+		return 'MEOWWWW!!';
+	}
+}
+
+class Dog extends Pet {
+	bark() {
+		return 'WOOOF!!';
+	}
+	eat() {
+		return `${this.name} scarfs his food!`;
+	}
+}
+
 
