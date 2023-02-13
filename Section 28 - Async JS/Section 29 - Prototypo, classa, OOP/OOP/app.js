@@ -1,14 +1,13 @@
 
-function makeMath (a, b) {
-    const table = {};
-    table.x = a;
-    table.y = b;
-    table.calculate = function () {
-        const {x, y} = this;
-        return x + y;
-    };
-    return table;
+function MakeMath(a, b) {
+    this.a = a;
+    this.b = b;
 }
 
-const firstMath = makeMath(5,6);
+MakeMath.prototype.calculate = function () {
+    const { a, b } = this;
+    return a + b;
+}
+
+const firstMath = new MakeMath(5, 6);
 firstMath.calculate();
