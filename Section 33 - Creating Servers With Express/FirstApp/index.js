@@ -30,6 +30,14 @@ app.get('/r/:subredit/:postID', (req, res) => {
     res.send(`<h1>You are browsing #${postID} post on ${subredit} subredit</h1>`);
 })
 
+app.get('/search', (req, res) => {
+    const {q} = req.query;
+    if (!q) {
+        res.send('Cant search if you dont search');
+    }
+    res.send(`Search results for: ${q}`);
+})
+
 app.get('/*', (req, res) => {
     res.send('Bad root!')
 })
