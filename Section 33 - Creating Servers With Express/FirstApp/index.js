@@ -20,11 +20,19 @@ app.get('/nyunyus', (req, res) => {
 app.post('/nyunyu', (req, res) => {
     res.send('This is a respons for a post request!')
 })
-app.post('/*', (req, res) => {
-    res.send('Bad root!')
+
+app.get('/r/:subredit', (req, res) => {
+    const {subredit} = req.params;
+    res.send(`<h1>You are browsing ${subredit} subredit</h1>`);
+})
+app.get('/r/:subredit/:postID', (req, res) => {
+    const {subredit, postID} = req.params;
+    res.send(`<h1>You are browsing #${postID} post on ${subredit} subredit</h1>`);
 })
 
-
+app.get('/*', (req, res) => {
+    res.send('Bad root!')
+})
 
 
 app.listen(3000, () => {
