@@ -15,6 +15,11 @@ app.get('/rand', (req, res) => {
     res.render('random', { rand: num })
 })
 
+app.get('/r/:subredit', (req, res) => {
+    const { subredit } = req.params;
+    res.render('subredit', { subredit: subredit })
+})
+
 app.listen(3000, () => {
     console.log('LISTENING ON PORT 3000')
 })
