@@ -20,6 +20,11 @@ app.get('/r/:subredit', (req, res) => {
     res.render('subredit', { subredit: subredit })
 })
 
+app.get('/guitars', (req, res) => {
+    const guitars = ['Gibson', 'Fender', 'Heritage', 'Ibanez', 'Eastman', 'ESP', 'Rickenbacker', 'Yamaha'];
+    res.render('guitars', { brands: guitars })
+})
+
 app.listen(3000, () => {
     console.log('LISTENING ON PORT 3000')
 })
