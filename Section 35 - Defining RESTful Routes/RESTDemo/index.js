@@ -3,33 +3,44 @@ const app = express();
 const path = require('path');
 
 
+app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+app.use(express.json()) // for parsing application/json
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs');
 
-app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
-app.use(express.json()) // for parsing application/json
+
 
 const comments = [
     {
-        author: "Sanya",
+        username: "Sanya",
         comment: "Csá csumi csá csokoládés csőtészta!!!!"
     },
     {
-        author: "Dari",
+        username: "Dari",
         comment: "Força Barça"
     },
     {
-        author: "Sziszi",
+        username: "Sziszi",
         comment: "Nyunyu???!"
     },
     {
-        author: "Nyunyu",
+        username: "Nyunyu",
         comment: "Pakoljá ki!!!"
     }
 ];
 
 app.get('/comments', (req, res) => {
     res.render('comments/index', { comments })
+})
+
+app.get('/comments/new', (req, res) => {
+    res.render('comments/new')
+})
+
+app.post('/comments', (req, res) => {
+    const {username, comment} = req.body;
+    comments.push({username, comment});
+    res.send('ok');
 })
 
 
