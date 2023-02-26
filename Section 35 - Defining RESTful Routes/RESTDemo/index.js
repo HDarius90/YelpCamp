@@ -12,18 +12,22 @@ app.set('view engine', 'ejs');
 
 const comments = [
     {
+        id: 1,
         username: "Sanya",
         comment: "Csá csumi csá csokoládés csőtészta!!!!"
     },
     {
+        id: 2,
         username: "Dari",
         comment: "Força Barça"
     },
     {
+        id: 3,
         username: "Sziszi",
         comment: "Nyunyu???!"
     },
     {
+        id: 4,
         username: "Nyunyu",
         comment: "Pakoljá ki!!!"
     }
@@ -38,9 +42,15 @@ app.get('/comments/new', (req, res) => {
 })
 
 app.post('/comments', (req, res) => {
-    const {username, comment} = req.body;
-    comments.push({username, comment});
+    const { username, comment } = req.body;
+    comments.push({ username, comment });
     res.redirect('/comments');
+})
+
+app.get('/comments/:id', (req, res) => {
+    const { id } = req.params;
+    const comment = comments.find(c => c.id === parseInt(id));
+    res.render('comments/show', { comment });
 })
 
 
