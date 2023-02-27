@@ -2,10 +2,12 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const { v4: uuid } = require('uuid');
+const methodOverride = require('method-override');
 
 
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 app.use(express.json()) // for parsing application/json
+app.use(methodOverride('_method'))
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs');
 
@@ -61,6 +63,12 @@ app.patch('/comments/:id', (req, res) => {
     const foundComment = comments.find(c => c.id === id);
     foundComment.comment = newCommentText;
     res.redirect('/comments');
+})
+
+app.get('/comments/:id/edit', (req, res) => {
+    const { id } = req.params;
+    const comment = comments.find(c => c.id === id);
+    res.render('comments/edit', { comment });
 })
 
 
