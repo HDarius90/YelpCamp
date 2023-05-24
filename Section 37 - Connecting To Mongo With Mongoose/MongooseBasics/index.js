@@ -17,3 +17,15 @@ const movieSchema = new mongoose.Schema({
 
 const Movie = mongoose.model('Movie', movieSchema);
 const matrix = new Movie({ title: "The Matrix", year: 2000, score: 9.2, rating: "V" });
+
+
+Movie.insertMany([
+    { title: "Star Wars", year: 1990, score: 9.0, rating: "P" },
+    { title: "Harry Potter", year: 1999, score: 8.2, rating: "V" },
+    { title: "Lord of the Rings", year: 2001, score: 9.4, rating: "V" }
+])
+
+    .then(data => {
+        console.log("IT WORKED!");
+        console.log(data);
+    })
