@@ -17,7 +17,7 @@ const movieSchema = new mongoose.Schema({
 
 const Movie = mongoose.model('Movie', movieSchema);
 const matrix = new Movie({ title: "The Matrix", year: 2000, score: 9.2, rating: "V" });
-
+matrix.save();
 
 Movie.insertMany([
     { title: "Star Wars", year: 1990, score: 9.0, rating: "P" },
