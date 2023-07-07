@@ -30,7 +30,12 @@ Movie.insertMany([
         console.log(data);
     }) */
 
-    Movie.find({year: {$gte: 2000}}).then(data => console.log('by year: ' + data));  //Find and log moovies where the year is >= 2000
+/*     Movie.find({year: {$gte: 2000}}).then(data => console.log('by year: ' + data));  //Find and log moovies where the year is >= 2000
     Movie.find({_id: '64a7e1aae6de5092184d6d30'}).then(data => console.log('by id param: ' + data));  //Find moovie by ID
-    Movie.findById('64a7e1aae6de5092184d6d30').then(data => console.log('by id: ' + data));  //Find moovie by ID
+    Movie.findById('64a7e1aae6de5092184d6d30').then(data => console.log('by id: ' + data));  //Find moovie by ID */
 
+
+    Movie.updateOne({rating: 'V'},{ score: 7}).then(data=> console.log(data)); //update the first match, wont return data
+    Movie.updateMany({title: {$in: ['Harry Potter', 'The Matrix']}},{ score: 8}).then(data=> console.log(data)); //update all match, wont return data
+    Movie.findOneAndUpdate({title: 'Lord of the Rings'}, {score: 7}).then(data=> console.log(data)); //update the first match and return the OLD data
+    Movie.findOneAndUpdate({title: 'Lord of the Rings'}, {score: 10}, {new: true}).then(data=> console.log(data)); //update the first match and return the NEW data
