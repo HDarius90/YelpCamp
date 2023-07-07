@@ -35,7 +35,12 @@ Movie.insertMany([
     Movie.findById('64a7e1aae6de5092184d6d30').then(data => console.log('by id: ' + data));  //Find moovie by ID */
 
 
-    Movie.updateOne({rating: 'V'},{ score: 7}).then(data=> console.log(data)); //update the first match, wont return data
+    /* Movie.updateOne({rating: 'V'},{ score: 7}).then(data=> console.log(data)); //update the first match, wont return data
     Movie.updateMany({title: {$in: ['Harry Potter', 'The Matrix']}},{ score: 8}).then(data=> console.log(data)); //update all match, wont return data
     Movie.findOneAndUpdate({title: 'Lord of the Rings'}, {score: 7}).then(data=> console.log(data)); //update the first match and return the OLD data
     Movie.findOneAndUpdate({title: 'Lord of the Rings'}, {score: 10}, {new: true}).then(data=> console.log(data)); //update the first match and return the NEW data
+ */
+
+    //Movie.deleteOne({rating:'V'}).then(data=>console.log(data));  //delete the first match, wont return data
+    Movie.deleteMany({rating:'V'}).then(data=>console.log(data));  //delete all match, wont return data
+    Movie.findOneAndDelete({title:'Star Wars'}, ).then(data=>console.log(data));  //delete the first match and return the deleted data
