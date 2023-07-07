@@ -17,7 +17,7 @@ const movieSchema = new mongoose.Schema({
 
 const Movie = mongoose.model('Movie', movieSchema);
 const matrix = new Movie({ title: "The Matrix", year: 2000, score: 9.2, rating: "V" });
-matrix.save();
+/* matrix.save();
 
 Movie.insertMany([
     { title: "Star Wars", year: 1990, score: 9.0, rating: "P" },
@@ -28,4 +28,9 @@ Movie.insertMany([
     .then(data => {
         console.log("IT WORKED!");
         console.log(data);
-    })
+    }) */
+
+    Movie.find({year: {$gte: 2000}}).then(data => console.log('by year: ' + data));  //Find and log moovies where the year is >= 2000
+    Movie.find({_id: '64a7e1aae6de5092184d6d30'}).then(data => console.log('by id param: ' + data));  //Find moovie by ID
+    Movie.findById('64a7e1aae6de5092184d6d30').then(data => console.log('by id: ' + data));  //Find moovie by ID
+
