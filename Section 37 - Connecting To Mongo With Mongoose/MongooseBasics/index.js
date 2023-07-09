@@ -41,6 +41,7 @@ Movie.insertMany([
     Movie.findOneAndUpdate({title: 'Lord of the Rings'}, {score: 10}, {new: true}).then(data=> console.log(data)); //update the first match and return the NEW data
  */
 
-    //Movie.deleteOne({rating:'V'}).then(data=>console.log(data));  //delete the first match, wont return data
+    Movie.deleteOne({rating:'V'}).then(data=>console.log(data));  //delete the first match, wont return data
     Movie.deleteMany({rating:'V'}).then(data=>console.log(data));  //delete all match, wont return data
     Movie.findOneAndDelete({title:'Star Wars'}, ).then(data=>console.log(data));  //delete the first match and return the deleted data
+
