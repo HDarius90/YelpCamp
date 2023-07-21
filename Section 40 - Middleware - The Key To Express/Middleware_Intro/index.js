@@ -1,12 +1,20 @@
-const  express = require('express');
+const express = require('express');
 const app = express();
 const morgan = require('morgan')
 
 app.use(morgan('tiny'))
-app.use((req, res, next) =>{
+app.use((req, res, next) => {
     req.requestTime = new Date();
     console.log(req.method, req.path);
     next();
+})
+
+app.use((req, res, next) => {
+    const { password } = req.query;
+    if (password === 'alahomora') {
+        next()
+    }
+    res.send("SORRY, YOU NEED A PASSWORD")
 })
 
 app.use('/dogs', (req, res, next) => {
@@ -28,13 +36,17 @@ app.use((req, res, next) => {
     return next();
 }) */
 
-app.get('/', (req, res) =>{
+app.get('/', (req, res) => {
     console.log(`REQUEST TIME: ${req.requestTime}`);
     res.send('HOME PAGE')
 })
 
-app.get('/dogs', (req, res) =>{
+app.get('/dogs', (req, res) => {
     res.send('WOOF WOOF!')
+})
+
+app.get('/secret', (req, res) =>{
+    res.send('MY SECRET IS: Sometimes I war headphones in public so I Dont have to talk to peaople')
 })
 
 app.use((req, res) => {
