@@ -58,6 +58,15 @@ app.use((req, res) => {
     res.status(404).send('NOT FOUND!')
 })
 
+app.use((err, req, res, next) => {
+    console.log("*******************");
+    console.log("***********ERROR********");
+    console.log("*******************");
+    // res.status(500).send("ERROR")
+    console.log(err);
+    next(err);
+})
+
 app.listen(3000, () => {
     console.log("Listening on port 3000");
 })
