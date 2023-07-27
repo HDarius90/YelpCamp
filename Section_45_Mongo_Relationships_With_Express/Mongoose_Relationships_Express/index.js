@@ -3,9 +3,10 @@ const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
 const Product = require('./models/product.js');
+const Farm = require('./models/farm.js');
 const methodOverride = require('method-override');
 
-mongoose.connect('mongodb://127.0.0.1:27017/shop')
+mongoose.connect('mongodb://127.0.0.1:27017/farmstand2')
     .then(() => {
         console.log("MONGOOSE CONNECTION OPEN!")
     })
@@ -20,10 +21,28 @@ app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 app.use(methodOverride('_method'))
 
+//FARM ROUTE
+app.get('/farms', async (req, res) => {
+    const farms = await Farm.find({});
+    res.render('farms/index', { farms })
+})
+
+app.get('/farms/new', (req, res) => {
+    res.render('farms/new', { categories })
+})
+
+app.post('/farms', async (req, res) => {
+    const farm = new Farm(req.body);
+    farm.save();
+    res.redirect('/farms');
+
+})
+
+//PRODUCTS ROUTE
 
 const categories = ['fruit', 'vegetable', 'dairy'];
 
-app.get('/products', async (req, res) => {
+app.get('/productss', async (req, res) => {
     const { category } = req.query;
     if (category) {
         const products = await Product.find({ category })
