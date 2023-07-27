@@ -5,21 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        All Farms
+        <%=farm.name%>
     </title>
 </head>
 
 <body>
-    <h1>All Farms</h1>
+    <h1>
+        <%= farm.name %>
+    </h1>
     <ul>
-        <% for (let farm of farms) { %>
-            <li><a href="/farms/<%= farm._id %>">
-                    <%= farm.name %>
-                </a>
-
-                <% } %>
-
+        <li>$<%= farm.city %>
+        </li>
+        <li>$<%= farm.email %>
+        </li>
     </ul>
+
+    <a href="/farms">Back</a>
 
 </body>
 
