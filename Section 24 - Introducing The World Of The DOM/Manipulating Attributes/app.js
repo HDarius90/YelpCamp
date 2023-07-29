@@ -1,1 +1,0 @@
-document.querySelector('img').setAttribute('src', 'https://cdn.shopify.com/s/files/1/2009/1313/products/61198_600x.jpg?v=1612356678')
