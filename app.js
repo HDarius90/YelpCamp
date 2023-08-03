@@ -11,8 +11,9 @@ const LocalStrategy = require('passport-local');
 const User = require('./models/user')
 
 
-const campgrounds = require('./routes/campgrounds')
-const reviews = require('./routes/reviews')
+const userRoutes = require('./routes/users')
+const campgroundRoutes = require('./routes/campgrounds')
+const reviewRoutes = require('./routes/reviews')
 
 mongoose.connect('mongodb://127.0.0.1:27017/yelp-camp');
 
@@ -45,10 +46,12 @@ const sessionConfig = {
 app.use(session(sessionConfig));
 app.use(flash());
 
-app.use(passport.initialize());
-app.use(passport.session());
+// Passport is an authentication middleware for Node that authenticates requests.
+app.use(passport.initialize());  // initialises Passport.
+// to alter the req object and change the 'user' value that is currently the session id (from the client cookie)
+app.use(passport.session()); //into the true deserialized user object.
 passport.use(new LocalStrategy(User.authenticate()))
-
+// To allow this to work correctly you must include serializeUser and deserializeUser functions in your custom code.
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
@@ -60,12 +63,13 @@ app.use((req, res, next) => {
 
 app.get('/fakeuser', async (req, res) => {
     const user = new User({ email: 'darius@gmail.com', username: 'dari' })
-    const newUser = await User.register(user, 'csirke');
+    const newUser = await User.register(user, 'csirke'); // register method automatically saves the user instance in the database.
     res.send(newUser);
 })
 
-app.use('/campgrounds', campgrounds);
-app.use('/campgrounds/:id/reviews', reviews);
+app.use('/', userRoutes);
+app.use('/campgrounds', campgroundRoutes);
+app.use('/campgrounds/:id/reviews', reviewRoutes);
 
 app.get('/', (req, res) => {
     res.render('home')
