@@ -62,11 +62,6 @@ app.use((req, res, next) => {
     next();
 })
 
-app.get('/fakeuser', async (req, res) => {
-    const user = new User({ email: 'darius@gmail.com', username: 'dari' })
-    const newUser = await User.register(user, 'csirke'); // register method automatically saves the user instance in the database.
-    res.send(newUser);
-})
 
 app.use('/', userRoutes);
 app.use('/campgrounds', campgroundRoutes);
