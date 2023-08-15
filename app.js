@@ -44,7 +44,7 @@ app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(mongoSanitize());
 
-const secret = procecss.env.SECRET || 'thisshouldbeasecret';
+const secret = process.env.SECRET || 'thisshouldbeasecret';
 
 
 const store = new MongoDBStore({
